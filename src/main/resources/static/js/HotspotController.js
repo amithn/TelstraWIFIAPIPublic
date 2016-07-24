@@ -118,6 +118,7 @@ hotspotsfinderapp.controller('hotspotController',
                           $scope.$apply(function () {
                               $scope.lat = clickedLocation.lat(); //latitude
                               $scope.lon = clickedLocation.lng(); //longitude
+                              $scope.map.panTo(clickedLocation);
                               $scope.search();
                           });
                       });
@@ -125,6 +126,7 @@ hotspotsfinderapp.controller('hotspotController',
                   } else{
                       //Marker has already been added, so just change its location.
                       $scope.marker.setPosition(clickedLocation);
+                      $scope.map.setCenter(clickedLocation);
                       $scope.$apply(function () {
                             $scope.lat = clickedLocation.lat(); //latitude
                             $scope.lon = clickedLocation.lng(); //longitude
@@ -147,6 +149,7 @@ hotspotsfinderapp.controller('hotspotController',
                google.maps.event.addListener($scope.marker, 'dragend', function(event){
                     var clickedLocation = event.latLng;
                     $scope.$apply(function () {
+                        $scope.map.panTo(clickedLocation);
                         $scope.lat = clickedLocation.lat(); //latitude
                         $scope.lon = clickedLocation.lng(); //longitude
                         $scope.search();
