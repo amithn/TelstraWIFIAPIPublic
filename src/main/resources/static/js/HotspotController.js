@@ -81,7 +81,7 @@ hotspotsfinderapp.controller('hotspotController',
                           lng: position.coords.longitude
                       };
 
-                      infoWindow.setPosition(pos);
+                      //infoWindow.setPosition(pos);
                       //infoWindow.setContent('Location found.');
                       $scope.map.setCenter(pos);
                       //Add lat and lng values to a field that we can save.
