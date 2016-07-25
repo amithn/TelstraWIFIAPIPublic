@@ -13,6 +13,7 @@ hotspotsfinderapp.controller('hotspotController',
   $scope.map = null;
 
 
+
   $scope.search = function() {
         $scope.hotspots = [];
 
